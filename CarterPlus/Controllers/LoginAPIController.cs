@@ -41,5 +41,23 @@ namespace CarterPlus.Controllers
             }
             return Ok(LoginDetails);
         }
+        public IHttpActionResult Edit(int id)
+        {
+            var LoginDetails = ObjLogin.FirstOrDefault((p) => p.ID == id);
+            if (LoginDetails == null)
+            {
+                return NotFound();
+            }
+            return Ok(LoginDetails);
+        }
+        public IHttpActionResult Details(int id)
+        {
+            var LoginDetails = ObjLogin.FirstOrDefault((p) => p.ID == id);
+            if (LoginDetails == null)
+            {
+                return NotFound();
+            }
+            return Ok(LoginDetails);
+        }
     }
 }
